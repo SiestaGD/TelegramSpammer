@@ -5,11 +5,9 @@ import os
 import pyperclip
 from datetime import datetime
 
-# Переходим в папку с проектом
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 os.chdir(BASE_DIR)
 
-# Загружаем настройки
 config = configparser.ConfigParser()
 config.read('config.ini', encoding='utf-8')
 
@@ -20,7 +18,7 @@ start_delay = config.getfloat('Settings', 'start_delay')
 max_messages = config.getint('Settings', 'max_messages')
 save_logs = config.getboolean('Settings', 'save_logs')
 
-# Вывод информации
+
 print("=" * 40)
 print("     TELEGRAM SPAMMER")
 print("=" * 40)
@@ -55,7 +53,7 @@ try:
         pyautogui.press('enter')
         sent += 1
         
-        # Вывод в консоль
+        
         print(f"[{sent}] {text}")
         
         # Логи
